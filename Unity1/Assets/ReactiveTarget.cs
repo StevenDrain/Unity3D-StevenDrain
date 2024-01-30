@@ -6,6 +6,10 @@ public class ReactiveTarget : MonoBehaviour
 {
     // Start is called before the first frame update
     public void ReactToHit(){
+        WanderingAI behavior = GetComponent<WanderingAI>();
+        if(behavior != null){
+            behavior.SetAlive(false);
+        }
         StartCoroutine(Die());
     }
     private IEnumerator Die(){
